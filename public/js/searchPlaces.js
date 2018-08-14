@@ -1,26 +1,32 @@
-const http = new searchPlaces;
-let loc = '';
-let rad = '3000';
+// class searchPlaces {
+//     constructor(){
+//         //maps and places apis enabled
+//         this.api_key = 'AIzaSyBB7AWuOT9mWC7DiUu1H3vD3B5jxxBR-Lk';
+//         this.location = "Dominican Republic";
+//         this.keyword =  "resort"
+//     }
 
-const inputUi = document.getElementById('searchInput');
+//     // Get latitude an longitude
+//     async getLocation(url){
+//         const loc = await fetch(url)
+//         const res = await loc.json();
+//         const locStr =res.results[0].geometry.location;
 
-inputUi.addEventListener('keyup', (e) => {
-    e.preventDefault();
-    const str =  e.target.value.toString(); 
-    loc = str.replace(/\s/g, "&");    
-})
+//         return {
+//             lat: locStr.lat,
+//             lng: locStr.lng
+//         }    }
 
-inputUi.addEventListener('keyup', (e) => {
+//     async getPlaces(url, location){    
+//         const service = new google.maps.places.PlacesService(location);
+//         console.log(service)
 
-    if(e.keyCode == '13'){
-        const locationLink = `https://maps.googleapis.com/maps/api/geocode/json?address=${loc}&components=country:DO&key=${http.api_key}`
-        // console.log('location link: ' + locationLink)
-        http.getLocation(locationLink)
-            .then(data => {
-                const location = `${data.lat},${data.lng}`;
-                const placesLink = `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${location}&radius=${rad}&keyword=resort&key=${http.api_key}`
-                console.log(placesLink)
-            })
-        
-    }
-})
+//     }
+
+
+// }
+
+
+// //Nearby Search requests
+// //https://maps.googleapis.com/maps/api/place/nearbysearch/output?parameters
+// //https://maps.googleapis.com/maps/api/geocode/json?components=locality:santa+cruz|country:ES&key=YOUR_API_KEY

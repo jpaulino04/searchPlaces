@@ -1,33 +1,35 @@
-class searchPlaces {
-    constructor(){
-        this.api_key = '';
-        this.location = "Dominican Republic";
-        this.keyword =  "resort"
-    }
+// const http = new searchPlaces;
+// const ui   = new UI;
+// let loc = '';
+// let rad = '3000';
 
-    async get(url){
-        const response = await fetch(url)
-        console.log(res)
-    }
+// //Get Search input
+// const inputUi = document.getElementById('searchInput');
 
-    async getLocation(url){
-        const loc = await fetch(url)
-        const res = await loc.json();
-        const locStr =res.results[0].geometry.location;
+// //Replace blank spaces with &
+// //Save search words in var loc
+// inputUi.addEventListener('keyup', (e) => {
+//     e.preventDefault();
+//     const str =  e.target.value.toString(); 
+//     loc = str.replace(/\s/g, "&");    
+// })
 
-        return {
-            lat: locStr.lat,
-            lng: locStr.lng
-        }
-    }
-
-
-}
-
-
-//Nearby Search requests
-//https://maps.googleapis.com/maps/api/place/nearbysearch/output?parameters
-//https://maps.googleapis.com/maps/api/geocode/json?components=locality:santa+cruz|country:ES&key=YOUR_API_KEY
+// inputUi.addEventListener('keyup', (e) => {
+//     if(e.keyCode == '13'){
+//         //construct the url
+//         const locationLink = `https://maps.googleapis.com/maps/api/geocode/json?address=${loc}&components=country:DO&key=${http.api_key}`
+//         // console.log('location link: ' + locationLink)
+//         http.getLocation(locationLink)
+//             .then(data => {
+//                 const location = `${data.lat},${data.lng}`;
+//                 const placesLink = `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${location}&radius=${rad}&keyword=resort&key=${http.api_key}`
+                
+//                 http.getPlaces(placesLink, location)
+//                 // ui.getPlaces(placesLink);
+//             })
+        
+//     }
+// })
 
 
 

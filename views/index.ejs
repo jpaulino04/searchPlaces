@@ -22,12 +22,16 @@
                     <div class="row">
                         <div class="col-md-8 mx-auto">
                             <div class="card card-body bg-dark pt-5 pb-5">
-                                <div class="form-group">
-                                    <input id='searchInput' type="text" class="form-control p-2" placeholder="Search Places">
-                                </div>  
-                                <h2 class="py-1 lead text-center">Search places, including the best hotels and resourts of The Dominican Republic!</h2>   
-                            </div> 
-                                              
+                                <form id="form" action="/api/places" method="POST">
+                                    <div class="form-group">
+                                        <input id='searchInput' name="search" type="text" class="form-control p-2" placeholder="Search Places">
+                                    </div>  
+                                    <h2 class="py-1 lead text-center">Search places, including the best hotels and resourts of The Dominican Republic!</h2>   
+                                </form>                                
+                            </div>                                               
+                        </div>
+                        <div id="places" class="col-md-8 mx-auto">
+
                         </div>
                     </div>
                 </div>    
@@ -35,9 +39,8 @@
     </section>
 
     
-    <script src="/js/ui.js"></script>
     <script src="/js/main.js"></script>
-    <script src="/js/searchPlaces.js"></script>
+
     
 </body>
 </html>
